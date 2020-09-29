@@ -1,2 +1,2 @@
-# drinkaholic
-Simple webpage design using photoshop
+# Drinkaholic
+A simple static website. It is designed using photoshop.
