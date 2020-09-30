@@ -1,2 +1,2 @@
 # Drinkaholic
-A simple static website. It is designed using photoshop.
+Simple responsive static webpage. It is designed using photoshop.

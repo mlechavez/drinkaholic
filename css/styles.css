@@ -16,30 +16,60 @@
   box-sizing: inherit;
 }
 
-/* Default
-================== */
-body {
-  text-align: center;
-  font-size: 18.594px;
+html {
+  font-size: 100%;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Default
+================== */
+
+body {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+select,
+textarea,
+address {
+  font-size: inherit;
+  font-family: "Open Sans", sans-serif;
+}
+
+address {
+  line-height: 1.7;
+  font-style: normal;
+  margin-bottom: 70px;
+}
+
+/* Typography
+============== */
+
 h1 {
-  font-size: 60px;
+  font-size: 3.75rem;
 }
 
 h2 {
-  font-size: 47.813px;
+  font-size: 2.99rem;
 }
 
 h3 {
   font-family: "Open Sans", sans-serif;
-  letter-spacing: 5px;
-  font-size: 39.844px;
+  font-size: 2.49rem;
   font-weight: 300;
 }
 
 h4 {
-  font-size: 31.875px;
+  font-size: 1.992rem;
 }
 
 h1,
@@ -55,49 +85,28 @@ h4 {
   font-family: "Architects Daughter", cursive;
 }
 
-p {
+p,
+a {
   font-family: "Open Sans", sans-serif;
-  font-size: 18.594px;
+  font-size: 1.162rem;
   font-weight: 300;
-  letter-spacing: 5px;
 }
 
-img {
-  max-width: 100%;
-  min-height: 100%;
-}
-
-input,
-select,
-textarea,
-address {
-  font-size: inherit;
-  font-family: "Open Sans", sans-serif;
-  letter-spacing: 2px;
-}
-
-address {
-  line-height: 1.7;
-  font-style: normal;
-  letter-spacing: 1.2px;
-  margin-bottom: 70px;
-}
 /* Buttons
 ================= */
 
 .btn {
   display: inline-block;
-  padding: 25px 20px;
+  padding: 1.162em 5em;
+  border-width: 2px;
   border-style: solid;
   border-color: transparent;
-  margin: 20px;
+  margin: 1.25em;
   font-family: "Open Sans", sans-serif;
-  font-size: 18.594px;
+  font-size: 1.162rem;
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
-  min-width: 280px;
-  letter-spacing: 5px;
 }
 
 .btn--red {
@@ -115,17 +124,23 @@ address {
   color: #fff;
 }
 
-/* Background
+@media (min-width: 20em) {
+  .btn {
+    font-size: 0.825rem;
+  }
+}
+
+/* Background colors
 ================== */
 
 .highlight {
-  padding-top: 45px;
-  padding-bottom: 45px;
+  padding-top: 2.813em;
+  padding-bottom: 2.813em;
 }
 
 .highlight--small {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 2.813em;
+  padding-bottom: 2.813em;
 }
 
 .highlight--green {
@@ -142,13 +157,28 @@ address {
   background-color: #ececec;
 }
 
+@media (min-width: 20em) {
+  /* .highlight {
+    padding: 0.938em 0.313em;
+  } */
+  .highlight h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .highlight h2 {
+    font-size: 1.825rem;
+  }
+}
+
 /* Container
 ================== */
 .container-full {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
+  padding-left: 0.938em;
+  padding-right: 0.938em;
+  margin-left: 0.938em;
+  margin-right: 0.938em;
 }
 
 .container-full:before,
@@ -158,18 +188,20 @@ address {
   clear: both;
 }
 
-/* Column grid
-================== */
-.row {
-  /* overflow: hidden; */
-  margin-right: -15px;
-  margin-left: -15px;
+@media (min-width: 20em) {
+  .container-full {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-/* .row [class*="col-"] {
-  margin-bottom: -99999px;
-  padding-bottom: 99999px;
-} */
+/* Column grid
+================== */
+
+.row {
+  margin-right: -0.938em;
+  margin-left: -0.938em;
+}
 
 .row:before,
 .row:after {
@@ -182,18 +214,40 @@ address {
 .col-6,
 .col-12 {
   float: left;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0.938em;
+  padding-right: 0.938em;
   position: relative;
-  min-height: 1px;
+  min-height: 0.063em;
 }
 
-.col-3 {
-  width: 33.33333333%;
+@media (min-width: 20em) {
+  .col-3,
+  .col-6 {
+    width: 100%;
+  }
 }
 
-.col-6 {
-  width: 50%;
+@media (min-width: 25.688em) {
+  .col-3,
+  .col-6 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 48em) {
+  .col-3,
+  .col-6 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 62em) {
+  .col-3 {
+    width: 33.33333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
 }
 
 /* Screen readers
@@ -201,10 +255,10 @@ address {
 
 .sr {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.063em;
+  height: 0.063em;
   padding: 0;
-  margin: -1px;
+  margin: -0.063em;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
@@ -212,36 +266,55 @@ address {
 /* Login
 ================== */
 
-.login-container {
-  overflow: hidden;
+.login-container:before,
+.login-container:after {
+  display: table;
+  content: " ";
+  clear: both;
 }
 
 .login-container a {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18.594px;
   text-transform: uppercase;
-  letter-spacing: 5px;
   float: right;
-  padding: 14px 35px;
+  padding: 0.875em 2.188em;
+  color: #000;
+  text-decoration: none;
 }
 
-/* Navigation
+.login-container a:hover,
+.login-container a:focus {
+  color: #a62e38;
+}
+
+/* Navigations
 ================= */
 
 .top-nav {
   background-color: #a62e38;
-  padding: 32px 26px;
-  overflow: hidden;
   color: #fff;
+  padding: 1.563em 0.938em;
+}
+
+.top-nav:before,
+.top-nav:after {
+  display: table;
+  content: " ";
+  clear: both;
 }
 
 .top-nav header {
   float: left;
 }
 
+.top-nav a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .nav-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 26.562px;
+  font-size: 1.66rem;
   font-weight: 400;
   line-height: 1;
   display: block;
@@ -251,28 +324,22 @@ address {
 .nav-sub-title {
   font-family: "Architects Daughter", cursive;
   text-align: left;
-  font-size: 15.937px;
+  font-size: 0.996em;
 }
 
 .top-nav ul {
   float: right;
   list-style: none;
+  margin-top: 0.7em;
 }
 
 .top-nav li {
   display: inline-block;
-  margin: 8.5px;
 }
 
-.top-nav a {
-  font-family: "Open Sans", sans-serif;
+.top-nav li a {
   font-weight: 700;
-  font-size: 21.25px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 10px;
-  letter-spacing: 3px;
+  padding: 0.5em;
 }
 
 .top-nav a:hover,
@@ -280,49 +347,183 @@ address {
   color: #ddd;
 }
 
+@media (min-width: 20em) {
+  #home {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .login-container {
+    padding: 0.938em 0;
+  }
+
+  .login-container a {
+    color: #000;
+    float: none;
+    font-size: 0.7em;
+    border: 0.063em solid #fff;
+  }
+
+  .login-container a:hover,
+  .login-container a:focus {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .top-nav {
+    background-color: transparent;
+  }
+
+  .top-nav header {
+    float: none;
+    margin-bottom: 0.938em;
+  }
+
+  .nav-title {
+    text-align: center;
+    font-size: 2em;
+    color: #000;
+  }
+
+  .nav-sub-title {
+    color: #000;
+    font-size: 0.8em;
+  }
+
+  .top-nav ul {
+    float: none;
+  }
+
+  .top-nav li {
+    margin: 0;
+  }
+
+  .top-nav li a {
+    letter-spacing: normal;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #000;
+    margin: 0;
+  }
+}
+
+@media (min-width: 48em) {
+  .login-container a {
+    color: #000;
+    float: right;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+  }
+
+  .top-nav header {
+    float: left;
+    margin-bottom: 0;
+    margin-left: 0.938em;
+  }
+
+  .top-nav ul {
+    float: right;
+  }
+
+  .nav-title {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .nav-sub-title {
+    font-size: 1.2rem;
+  }
+
+  .top-nav li a {
+    letter-spacing: normal;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+}
+
 /* showcase
 ===================== */
 
 .showcase {
-  background-image: url("../images/showcase.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  padding: 185px 175px;
+  padding: 11.563em 10.938em;
   color: #fff;
 }
 
-.showcase h2 {
-  font-size: 60px;
+.showcase:after {
+  content: "";
+  background-image: url("../images/showcase.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.showcase h1 {
+  font-size: 3.75rem;
 }
 
 .showcase p {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 20em) {
+  .showcase {
+    padding-top: 50vh;
+    padding-left: 0;
+    padding-right: 0;
+    color: #000;
+    height: 100vh;
+  }
+  .showcase h1 {
+    font-size: 1.875rem;
+  }
+  .showcase p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 768px) {
+  .showcase h1 {
+    font-size: 3rem;
+  }
+  .showcase p {
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 1.5em;
+  }
 }
 
 /* Feature drinks
 ==================== */
 .feature-drink {
-  margin: 20px 0;
+  margin: 1.25em 0;
 }
 
 .feature-drinks h3 {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 3.75em;
+  margin-bottom: 3.75em;
 }
 
 .feature-drink h4 {
-  padding-bottom: 2px;
-  letter-spacing: 6px;
-  border-bottom: 3px solid #000;
+  padding-bottom: 0.125em;
+  border-bottom: 0.188em solid #000;
   display: inline-block;
-  margin-bottom: 36px;
+  margin-bottom: 2.25em;
 }
 
 .feature-drink p {
-  padding: 0 20px;
-  margin-bottom: 47px;
+  padding: 0 1.25em;
+  margin-bottom: 2.938em;
 }
 
 .feature-drink-description {
@@ -334,39 +535,98 @@ address {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  margin-bottom: 1.125em;
+}
+
+.card h4 {
+  display: inline-block;
+  border-bottom: 0.188em solid #000;
+  margin-bottom: 1.125em;
+}
+
+.card-caption {
+  padding: 1.5em;
+}
+
+@media (min-width: 20em) {
+  .highlight--light-gray {
+    padding: 0;
+  }
+  .feature-drink {
+    margin: 0;
+    border-bottom: 0.063em solid gray;
+  }
+  .feature-drinks h3 {
+    font-size: 1.125rem;
+    margin-top: 1.875em;
+    margin-bottom: 1.875em;
+  }
+  .feature-drink-description h4 {
+    font-size: 1rem;
+  }
+
+  .feature-drink p {
+    font-size: 0.875rem;
+    margin-bottom: 1.25em;
+  }
+  .card-caption h4 {
+    font-size: 1rem;
+  }
+  .card-caption p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .feature-drinks h3 {
+    font-size: 1.8rem;
+  }
+
+  .feature-drink-description h4 {
+    font-size: 1.725rem;
+  }
+
+  .feature-drink p {
+    font-size: 1.7rem;
+  }
+
+  .card-caption h4 {
+    font-size: 1.9rem;
+  }
+  .card-caption p {
+    font-size: 1.5rem;
+  }
 }
 
 /* Contact
 ================ */
+
 .contact {
   text-align: left;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 30px;
+  padding-left: 0.938em;
+  padding-right: 0.938em;
+  padding-top: 1.875em;
 }
 
 /* Forms
 ================ */
-/* .form-inline:before,
-.form-inline:after {
-  display: table;
-  content: " ";
-  clear: both;
-}
-*/
+
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 0.938em;
 }
 
 .form-control {
   border-width: 1px;
   border-style: solid;
   border-color: #ddd;
-  border-radius: 4px;
+  border-radius: 0.25em;
   color: #ddd;
   width: 100%;
-  padding: 20px;
+  padding: 1.25em;
   font-size: inherit;
   display: block;
 }
@@ -388,18 +648,52 @@ address {
   display: block;
 }
 
-.form-inline input.form-control {
+/* .form-inline input.form-control {
   width: 100%;
-}
+} */
 
 .form-group .btn {
   margin-left: 0;
 }
 
+@media (min-width: 20em) {
+  .form-inline {
+    border-bottom: 1px solid gray;
+    margin-bottom: 0.938em;
+  }
+
+  .form-inline .form-group,
+  .form-inline .form-control {
+    display: block;
+  }
+
+  .form-inline .form-group:nth-child(-n + 2) {
+    width: 100%;
+  }
+
+  .form-inline .form-group:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .contact address {
+    margin-top: 0.938em;
+  }
+
+  .contact .social-media-accounts {
+    margin-bottom: 1.875em;
+  }
+}
+
+@media (min-width: 48em) {
+  .form-control {
+    font-size: 1.5rem;
+  }
+}
+
 /* Social Media
 ======================= */
 .social-media-accounts p {
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
 }
 
 .fa-facebook-square {
@@ -418,6 +712,16 @@ address {
   color: #0177b5;
 }
 
+@media (min-width: 48em) {
+  address {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .social-media-accounts {
+    text-align: center;
+  }
+}
+
 /* Footer
 =================== */
 .footer {
@@ -431,7 +735,7 @@ address {
 
 .footer ul {
   list-style: none;
-  padding: 50px;
+  padding: 3.125em;
 }
 
 .footer li {
@@ -444,5 +748,16 @@ address {
   text-decoration: none;
   color: #fff;
   line-height: 2;
-  letter-spacing: 2px;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: #ddd;
+}
+
+@media (min-width: 48em) {
+  footer p,
+  footer a {
+    font-size: 1.5rem;
+  }
 }
